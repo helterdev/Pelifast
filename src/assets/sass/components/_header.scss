@@ -1,0 +1,45 @@
+@use '../abstracts/mixin';
+.header{
+    width: 100%;
+    margin: 1rem 0;
+    .navigation{
+        @include mixin.flex-center;
+        padding: 1rem 0;
+        &__logo{
+            width: 30%;
+            /*query*/
+            @include mixin.tablet{
+                text-align: center;
+            }
+        }
+        &__img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            @include mixin.bg-shadow;
+        }
+        &__menu{
+           width: 50%;
+           gap: 20px;
+            @include mixin.flex-center;
+            /*query*/
+            @include mixin.desktop{
+                justify-content: space-evenly;
+                margin-right: 10%; 
+            }
+        }
+        &__link{
+            padding: 10px 5px;
+            border-radius: 20%;
+            font-weight: 400;
+            &:hover{
+                @include mixin.bg-shadow;
+            }
+            &--home{
+                @include mixin.bg-shadow;
+            }
+            
+        }
+        
+    }
+}

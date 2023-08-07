@@ -1,0 +1,23 @@
+@mixin bg-shadow{
+    box-shadow: 12px 12px 24px #1d1d1d,
+    -12px -12px 24px #2b2b2b;
+}
+
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* media querys */
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1024px){
+        @content;
+    }
+}
