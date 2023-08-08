@@ -16,7 +16,7 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            @include mixin.bg-shadow;
+            @include mixin.base-shadow;
         }
         &__menu{
            width: 50%;
@@ -33,10 +33,10 @@
             border-radius: 20%;
             font-weight: 400;
             &:hover{
-                @include mixin.bg-shadow;
+                @include mixin.base-shadow;
             }
             &--home{
-                @include mixin.bg-shadow;
+                @include mixin.base-shadow;
             }
             
         }
