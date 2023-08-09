@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { endPoints } from "../api/api";
+import  Pagination  from "@mui/material/Pagination";
+import  Stack  from "@mui/material/Stack";
 const ListMovies = () => {
     const [currentMovies, setCurrentMovies] = useState([]);
     const [page, setPage] = useState(1);
+    const [count, setCount] = useState(0);
     const {requestMovies} = endPoints;
     useEffect( () => {
         const abortController = new AbortController();
@@ -11,6 +14,7 @@ const ListMovies = () => {
                 const response = await requestMovies(page, abortController.signal);
                 if(response.ok){
                     const data = await response.json();
+                    setCount(data.total_pages);
                     setCurrentMovies(data.results);
                 }else{
                     throw new Error(response.status)
@@ -22,8 +26,13 @@ const ListMovies = () => {
             } 
          }
          getData();
+         
     return () => abortController.abort();
     },[page])
+    /* onChange */
+    const handleClick = (e, value) => {
+        setPage(value);
+    }
     return (
         <div className="section">
            <section className="container">
@@ -39,7 +48,12 @@ const ListMovies = () => {
                         
                     )
                 })}
-            </section> 
+            </section>
+            <div>
+                <Stack spacing={2}>
+                    <Pagination count={count} color="secondary" page={page} onChange={handleClick}/>
+                </Stack>
+            </div>
         </div>
     )
 }

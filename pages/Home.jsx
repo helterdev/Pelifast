@@ -3,7 +3,7 @@ const Home = () => {
     return(
         <main>
             <div className="container-home">
-                <h1 className="container-home__title">En estreno</h1>
+                <h2 className="container-home__title">En estreno</h2>
             </div>
             <ListMovies/>
         </main>

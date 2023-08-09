@@ -2,15 +2,9 @@
 .header{
     margin: 1rem 0;
     .navigation{
+        gap: 0 10px;
         @include mixin.flex-center;
         padding: 1rem 0;
-        &__logo{
-            width: 30%;
-            /*query*/
-            @include mixin.tablet{
-                text-align: center;
-            }
-        }
         &__img{
             width: 100px;
             height: 100px;
@@ -18,14 +12,8 @@
             @include mixin.base-shadow;
         }
         &__menu{
-           width: 50%;
-           gap: 20px;
+            gap: 0 10px ;
             @include mixin.flex-center;
-            /*query*/
-            @include mixin.desktop{
-                justify-content: space-evenly;
-                margin-right: 10%; 
-            }
         }
         &__link{
             padding: 10px 5px;
@@ -40,5 +28,25 @@
             
         }
         
+    }
+}
+/*query*/
+@include mixin.tablet{
+    .header{
+        & .navigation{
+            gap: 0 5%;
+        }
+    }
+}
+
+@include mixin.desktop{
+    .header{
+        & .navigation{
+            justify-content: space-around;
+            &__menu{
+                justify-content: space-evenly;
+                margin-right: 10%; 
+            }
+        }
     }
 }
