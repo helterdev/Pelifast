@@ -1,6 +1,5 @@
 @use '../abstracts/mixin';
 .header{
-    width: 100%;
     margin: 1rem 0;
     .navigation{
         @include mixin.flex-center;

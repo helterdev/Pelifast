@@ -1,16 +1,17 @@
+import { Link } from "react-router-dom";
 const Header = () => {
     return (
         <header className="header">
-            <nav className="navigation">
-                <a className="navigation__logo" href="#">
-                    <img className="navigation__img" src="/public/logo.jpg" alt="logo_cats-pages" />
-                </a>
+           <nav className="navigation">
+                <Link className="navigation__logo" to="/">
+                    <img className="navigation__img" src="/logo.jpg" alt="logo_cats-pages" />
+                </Link>
                 <ul className="navigation__menu">
-                    <li className="navigation__option"><a className="navigation__link navigation__link--home" href="#">Home</a></li>
-                    <li className="navigation__option"><a className="navigation__link" href="#">Populares</a></li>
+                    <li className="navigation__option"><Link className="navigation__link navigation__link--home" to={"/"}>Home</Link></li>
+                    <li className="navigation__option"><Link className="navigation__link" to={"/popular"}>Populares</Link></li>
                     <li className="navigation__option"><a className="navigation__link" href="#">TV Series</a></li>
                 </ul>
-            </nav>
+            </nav> 
             
         </header>
         

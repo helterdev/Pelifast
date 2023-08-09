@@ -25,22 +25,22 @@ const ListMovies = () => {
     return () => abortController.abort();
     },[page])
     return (
-        <section className="container">
-            {currentMovies.map((movie) => {
-                const {title, poster_path, id} = movie;
-                return (
-                    <a href="#" className="container__card" key={id}>
-                        <div className="container__head">
-                            <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt="" className="container__img" />
-                        </div>
-                        <h3 className="container__title">{title}</h3>
-                    </a>
-                    
-                )
-            })}
-            <button onClick={() => {setPage( page + 1)}}>siguiente</button>
-            <button onClick={() => {setPage( page - 1)}}>Anterior</button>
-        </section>
+        <div className="section">
+           <section className="container">
+                {currentMovies.map((movie) => {
+                    const {title, poster_path, id} = movie;
+                    return (
+                        <a href="#" className="container__card" key={id}>
+                            <div className="container__head">
+                                <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt="" className="container__img" />
+                            </div>
+                            <h3 className="container__title">{title}</h3>
+                        </a>
+                        
+                    )
+                })}
+            </section> 
+        </div>
     )
 }
 
