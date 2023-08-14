@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { endPoints } from "../api/api";
 import  Pagination  from "@mui/material/Pagination";
 import  Stack  from "@mui/material/Stack";
+import Posts from "./Posts";
 const ListMovies = () => {
     const [currentMovies, setCurrentMovies] = useState([]);
     const [page, setPage] = useState(1);
@@ -35,23 +36,10 @@ const ListMovies = () => {
     }
     return (
         <div className="section">
-           <section className="container">
-                {currentMovies.map((movie) => {
-                    const {title, poster_path, id} = movie;
-                    return (
-                        <a href="#" className="container__card" key={id}>
-                            <div className="container__head">
-                                <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt="" className="container__img" />
-                            </div>
-                            <h3 className="container__title">{title}</h3>
-                        </a>
-                        
-                    )
-                })}
-            </section>
-            <div>
+            <Posts data={currentMovies}/>
+            <div className="navigation">
                 <Stack spacing={2}>
-                    <Pagination count={count} color="secondary" page={page} onChange={handleClick}/>
+                    <Pagination sx={{display: "flex", justifyContent:"center"}} count={count} color="secondary" page={page} onChange={handleClick}/>
                 </Stack>
             </div>
         </div>

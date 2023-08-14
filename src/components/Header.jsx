@@ -9,7 +9,7 @@ const Header = () => {
                 <ul className="navigation__menu">
                     <li className="navigation__option"><Link className="navigation__link navigation__link--home" to={"/"}>Home</Link></li>
                     <li className="navigation__option"><Link className="navigation__link" to={"/popular"}>Populares</Link></li>
-                    <li className="navigation__option"><a className="navigation__link" href="#">TV Series</a></li>
+                    <li className="navigation__option"><Link className="navigation__link" to={"/series"}>TV Series</Link></li>
                 </ul>
             </nav> 
             

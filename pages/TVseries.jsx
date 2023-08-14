@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import { endPoints } from "../src/api/api";
 import Post from "../src/components/Posts";
-const Popular = () => {
-    const {requestPopularMovies} = endPoints
-    const [popularMovies, setPopularMovies] = useState([]);
+const TVseries = () => {
+    const {requestTVSeries} = endPoints;
+    const [tvSeries, setTVSeries] = useState([]);
     const [page, setPage] = useState(1);
     useEffect( () => {
         const abortController = new AbortController();
         const getData = async () => {
             try {
-                const response = await requestPopularMovies(page, abortController.signal);
+                const response = await requestTVSeries(page, abortController.signal);
                 if(response.ok){
                     const data = await response.json();
-                    setPopularMovies(data.results);
+                    setTVSeries(data.results);
                 }else{
                     throw new Error(response.status)
                 }
@@ -26,11 +26,11 @@ const Popular = () => {
          
     return () => abortController.abort();
     },[page])
-    return (
+    return(
         <div>
-            <Post data={popularMovies}/>
+            <Post data={tvSeries}/>
         </div>
     )
 }
 
-export default Popular;
+export default TVseries;
