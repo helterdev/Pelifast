@@ -1,8 +1,26 @@
+@use '../abstracts/mixin';
 .container-home{
-    margin: 2rem 0;
-    padding-left: 40px;
+    margin: 48px auto;
     &__title{
         font-size: 48px;
         font-weight: 700;
+        width: 85%;
+        margin: 0 auto;
+    }
+}
+
+/*querys*/
+@include mixin.tablet{
+    .container-home{
+        &__title{
+          padding: 0 10%;  
+        }
+    }
+}
+@include mixin.desktop{
+    .container-home{
+        &__title{
+            max-width: 1000px;
+        }
     }
 }

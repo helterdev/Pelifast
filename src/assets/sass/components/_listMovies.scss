@@ -1,7 +1,5 @@
 @use '../abstracts/mixin';
-
 .container{
-    // margin: 0 2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -9,7 +7,7 @@
     &__card{
         display: inline-block;
         width: 175px;
-        height: 325px;
+        height: 350px;
         box-sizing: border-box;
         border-radius: 30px;
         box-shadow: 1px 1px 2px #1b1b1b,
@@ -31,7 +29,7 @@
         border-radius: 30px;
     }
     &__title{
-        font-size: 1rem;
+        font-size: 14px;
         font-weight: 400;
         line-height: 17px;
         margin: 0 20px;
@@ -40,4 +38,17 @@
 
 .navigation{
     margin: 30px 0;
+}
+
+/* querys */
+@include mixin.tablet{
+    .container{
+        width: 85%;
+        margin: 0 auto;
+    }
+}
+@include mixin.desktop{
+    .container{
+        max-width: 1000px;
+    }
 }

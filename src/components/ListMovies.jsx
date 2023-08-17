@@ -1,22 +1,25 @@
 import { useState, useEffect } from "react";
 import { endPoints } from "../api/api";
-import  Pagination  from "@mui/material/Pagination";
-import  Stack  from "@mui/material/Stack";
 import Posts from "./Posts";
-const ListMovies = () => {
-    const [currentMovies, setCurrentMovies] = useState([]);
+import PaginationNav from "./Pagination";
+const ListMovies = (props) => {
+    
+    const {dataList, setDataList, namePoint} = props;
+
     const [page, setPage] = useState(1);
-    const [count, setCount] = useState(0);
     const {requestMovies} = endPoints;
+    /*endPoints*/
+    const endPoin = namePoint.movie;
+    const category = namePoint.category;
+
     useEffect( () => {
         const abortController = new AbortController();
         const getData = async () => {
             try {
-                const response = await requestMovies(page, abortController.signal);
+                const response = await requestMovies(endPoin, category, page, abortController.signal);
                 if(response.ok){
                     const data = await response.json();
-                    setCount(data.total_pages);
-                    setCurrentMovies(data.results);
+                    setDataList(data.results);
                 }else{
                     throw new Error(response.status)
                 }
@@ -30,18 +33,10 @@ const ListMovies = () => {
          
     return () => abortController.abort();
     },[page])
-    /* onChange */
-    const handleClick = (e, value) => {
-        setPage(value);
-    }
     return (
         <div className="section">
-            <Posts data={currentMovies}/>
-            <div className="navigation">
-                <Stack spacing={2}>
-                    <Pagination sx={{display: "flex", justifyContent:"center"}} count={count} color="secondary" page={page} onChange={handleClick}/>
-                </Stack>
-            </div>
+            <Posts data={dataList}/>
+            <PaginationNav page={page} setPage={setPage}/>
         </div>
     )
 }

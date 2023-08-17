@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 const Post = (props) => {
     const {data} = props;
+    
     return(
     <section className="container">
         {data.map((dataMovie) => {
-            const {title, poster_path, id, name} = dataMovie;
+            const {title, poster_path, id, name, vote_average} = dataMovie;
             return (
                 <Link to={`#`} className="container__card" key={id}>
                     <div className="container__head">
