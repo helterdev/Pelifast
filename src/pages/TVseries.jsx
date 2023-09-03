@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ListMovies from "../components/ListMovies";
+import ListMovies from "../components/ListData";
 const TVseries = () => {
     // const {requestTVSeries} = endPoints;
     const [tvSeries, setTVSeries] = useState([]);
