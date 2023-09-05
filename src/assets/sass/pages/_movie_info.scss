@@ -29,6 +29,12 @@
         font-style: italic;
     }
 
+    &__icon{
+        margin: 1rem 0;
+        @include mixin.flex-center;
+        column-gap: 5px;
+    }
+
     &__description{
         display: flex;
         justify-content: center;
@@ -41,5 +47,25 @@
         font-size: 1.2em;
         font-weight: 200;
     }
+
+    &__genders{
+        margin: 1em 0;
+        text-align: center;
+    }
+
+    &__infogender{
+        margin: 0 1em;
+        font-size: 20px;
+        font-weight: 200;
+        font-weight: bold;
+    }
+
+    &__companies{
+        display: flex;
+        margin: 1rem 0;
+        
+    }
+
+    
 
 }

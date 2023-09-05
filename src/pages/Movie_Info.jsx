@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { endPoints } from "../api/api";
+import {BsTicketPerforated} from "react-icons/bs";
 const MovieInfo = () => {
-    const [data, setData] = useState({});
+    const [data, setData] = useState({genres:[],
+    production_companies: []});
     const {id} = useParams();
     const {infoMovie} = endPoints;
     useEffect(() => {
@@ -24,9 +26,9 @@ const MovieInfo = () => {
         }
         getData();
         return () => abortController.abort();
+        
     }, [id])
-    console.log(data);
-    const {poster_path, original_title, title, overview} = data;
+    const {poster_path, original_title, title, overview, genres, budget, vote_average, production_companies} = data;
     return (
         <section className="container-info">
             <div className="container-info__poster">
@@ -36,10 +38,15 @@ const MovieInfo = () => {
                 <article className="container-info__overview">
                     <div className="container-info__head">
                         <h2 className="container-info__title">{title}</h2>
+                        <div className="container-info__icon"><BsTicketPerforated/>Scores: {Math.round(vote_average)}</div>
                     </div>
+                    <aside className="container-info__genders">
+                        {genres.map((gender)=> <span className="container-info__infogender" id={gender.id} key={gender.id}>{gender.name}</span>)}
+                    </aside>
                     <aside className="container-info__description">
                         <p className="container-info__paragraph">{overview}</p>
                     </aside>
+                    
                 </article>
             </div>
         </section>
