@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import {BsTicketPerforated} from "react-icons/bs";
 const Post = (props) => {
     const {data} = props;
-    
+   
     return(
     <section className="container">
         {data.map((dataMovie) => {

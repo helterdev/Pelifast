@@ -10,7 +10,7 @@ const Header = () => {
                 <ul className="navigation__menu">
                     <li className="navigation__option"><Link  className="navigation__link " to={"/"} id="home">Home</Link></li>
                     <li className="navigation__option"><Link  className="navigation__link" to={"/popular"}id="popular">Populares</Link></li>
-                    <li className="navigation__option"><Link  className="navigation__link" to={"/series"} id="tv">TV Series</Link></li>
+                    <li className="navigation__option"><Link  className="navigation__link" to={"/series"} id="tv" onClick={(e) => {console.log(e)}}>TV Series</Link></li>
                 </ul>
             </nav> 
             

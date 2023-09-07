@@ -1,8 +1,11 @@
 @use '../abstracts/mixin';
-
+.container-boton{
+    padding: 0 2rem;
+}
 .container-info{
     &__poster{
         text-align: center;
+        margin: 3rem 0;
     }
 
     &__img{
@@ -12,10 +15,6 @@
     }
     &__meta{
         margin: 2rem 0;
-    }
-
-    &__overview{
-
     }
 
     &__head{
@@ -68,4 +67,19 @@
 
     
 
+}
+
+@include mixin.desktop{
+    .container-info{
+        display: flex;
+        
+        &__poster{
+            margin: 2rem 0 2rem 1rem;
+        }
+
+        &__img{
+           width: 300px;
+           height: 400px;
+        }
+    }
 }

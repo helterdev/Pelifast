@@ -21,11 +21,7 @@
             font-weight: 400;
             &:hover{
                 @include mixin.base-shadow;
-            }
-            // &--home{
-            //     @include mixin.base-shadow;
-            // }
-            
+            } 
         }
         .navigation__link--active{
             @include mixin.base-shadow;
