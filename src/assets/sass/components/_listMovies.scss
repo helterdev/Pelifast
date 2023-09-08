@@ -13,10 +13,21 @@
         height: 350px;
         box-sizing: border-box;
         border-radius: 30px;
+        box-shadow: 15px 15px 30px #bebebe,
+        -15px -15px 30px #ffffff;
+        &:hover{
+            box-shadow: 15px 15px 30px #8d8d8d,
+            -15px -15px 30px #e2dfdf;
+            transition: 0.1s ease-in-out;
+        }
+    }
+
+    &__card--active{
         box-shadow: 1px 1px 2px #1b1b1b,
-        -3px -3px 6px #2b2b2b;
+        -3px -3px 6px #2b2b2b; 
         &:hover{
             @include mixin.card-shadow;
+            transition: 0.1s ease-in-out;
         }
     }
     

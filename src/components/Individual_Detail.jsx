@@ -1,10 +1,12 @@
 import { endPoints } from "../api/api";
 import { useEffect } from "react";
 import {BsTicketPerforated} from "react-icons/bs";
+import { useThemeCustom } from "../context/Theme";
 const Detail = (props) => {
     const {data, setData, points} = props;
     const {endPoint, id} = points;
     const {infoMovie} = endPoints;
+    const {shadowImg} = useThemeCustom();
     useEffect(() => {
         const abortController = new AbortController();
         const getData = async () => {
@@ -31,7 +33,7 @@ const Detail = (props) => {
     return(
         <section className="container-info">
                  <div className="container-info__poster">
-                     <img className="container-info__img" src={`https:image.tmdb.org/t/p/w500/${poster_path}`} alt={`${original_title}`} />
+                     <img className={`container-info__img ${shadowImg}`} src={`https:image.tmdb.org/t/p/w500/${poster_path}`} alt={`${original_title}`} />
                  </div>
                  <div className="container-info__meta">
                      <article className="container-info__overview">

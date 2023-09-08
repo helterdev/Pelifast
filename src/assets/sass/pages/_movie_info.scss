@@ -11,8 +11,15 @@
     &__img{
         width: 90%;
         border-radius: 20px;
+        box-shadow: 15px 15px 30px #bebebe,
+        -15px -15px 30px #ffffff;
+        // @include mixin.card-shadow;
+    }
+
+    .container-info__img--active{
         @include mixin.card-shadow;
     }
+
     &__meta{
         margin: 2rem 0;
     }

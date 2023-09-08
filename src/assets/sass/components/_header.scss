@@ -1,15 +1,16 @@
 @use '../abstracts/mixin';
 .header{
-    margin: 1rem 0;
+    
     .navigation{
         gap: 0 10px;
         @include mixin.flex-center;
         padding: 1rem 0;
+        margin: 0;
         &__img{
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            @include mixin.base-shadow;
+            border: 2px solid;
         }
         &__menu{
             gap: 0 10px ;
@@ -19,12 +20,10 @@
             padding: 10px 5px;
             border-radius: 20%;
             font-weight: 400;
-            &:hover{
-                @include mixin.base-shadow;
-            } 
         }
         .navigation__link--active{
-            @include mixin.base-shadow;
+            box-shadow: 5px 5px 25px #d0d0d0,
+                -5px -5px 25px #cecdcd;
         }
     }
 }

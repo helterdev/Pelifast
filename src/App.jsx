@@ -6,12 +6,14 @@ import Error from "./pages/Error";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MovieInfo from "./pages/Movie_Info";
 import Footer from "./components/Footer";
+import Switch_Theme from "./components/Switch_Theme";
+import { useThemeCustom } from "./context/Theme";
 
 function App() {
-
-
+  const {theme} = useThemeCustom();  
   return (
-    <>
+    <div className={theme}>
+      <Switch_Theme/>
       <BrowserRouter>
         <Header/>
         <Routes>
@@ -23,7 +25,7 @@ function App() {
         </Routes>
         <Footer/>
       </BrowserRouter>
-    </>
+    </div>
   )
 }
 

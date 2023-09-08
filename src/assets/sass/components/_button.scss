@@ -5,11 +5,22 @@
     font-size: 1em;
     border-radius: 15px;
     border: none;
-    color: white;
+    color: #242424;
     cursor: pointer;
+    box-shadow: 15px 15px 30px #bebebe,
+        -15px -15px 30px #ffffff;
+    &:hover{
+        box-shadow: 15px 15px 30px #8d8d8d,
+            -15px -15px 30px #e2dfdf;
+            transition: 0.5s ease-in-out;
+    }
+}
+
+.boton--active{
     &:hover{
         @include mixin.base-shadow;
     }
     @include mixin.card-shadow;
+    color: white;
     
 }
