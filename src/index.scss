@@ -8,10 +8,12 @@
 /* components*/
 @forward './assets/sass/components/header';
 @forward './assets/sass/components/listMovies';
+@forward './assets/sass/components/button';
+@forward './assets/sass/components/footer';
 
 /* pages */
 @forward './assets/sass/pages/home';
 @forward './assets/sass/pages/movie_info';
-@forward './assets/sass/components/button';
+
 
 

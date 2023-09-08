@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Error from "./pages/Error";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MovieInfo from "./pages/Movie_Info";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/infoMovie/:id" element={<MovieInfo/>}/>
           <Route path="*" element={<Error/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   )

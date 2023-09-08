@@ -1,0 +1,22 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    height: 100px;
+    align-items: center;
+
+    &__title{
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    &__link{
+        display: inline-flex;
+        padding: 0 5px;
+    }
+
+    &__icon{
+        width: 30px;
+        height: 30px;
+    }
+}
