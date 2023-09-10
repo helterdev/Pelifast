@@ -26,10 +26,9 @@ const Detail = (props) => {
         }
         getData();
         return () => abortController.abort();
-          
     }, [id])
-    const {poster_path,original_title, title, overview, genres, budget, vote_average, production_companies} = data;
-    console.log(poster_path);
+    const {poster_path,original_title, title, overview, genres, vote_average} = data;
+    // console.log(poster_path);
     return(
         <section className="container-info">
                  <div className="container-info__poster">

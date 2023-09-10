@@ -5,7 +5,7 @@ const requestMovies = (endPoin, category, page, abortSignal) => {
 }
 
 const infoMovie = (endPoint,id, abortSignal) => {
-    return fetch(`https://api.themoviedb.org/3/${endPoint}/${id}?api_key=${API_KEY}&language=es-MX`,{signal: abortSignal})
+    return fetch(`https://api.themoviedb.org/3/${endPoint}/${id}?api_key=${API_KEY}&language=es-MX`, {signal: abortSignal})
 }
 
 /* export endpoints */

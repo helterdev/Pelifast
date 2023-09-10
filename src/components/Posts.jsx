@@ -8,7 +8,6 @@ const Post = (props) => {
     <section className="container">
         {data.map((dataMovie) => {
             const {title, poster_path, id, name, vote_average} = dataMovie;
-            console.log(poster_path);
             return (
                 <Link to={`/infoMovie/${id}`} className={`container__card ${shadowCard}`} key={id}>
                     <div className="container__head">

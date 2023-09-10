@@ -5,7 +5,8 @@ import Detail from "../components/Individual_Detail";
 import {BsArrowLeft} from "react-icons/bs";
 const MovieInfo = () => {
     const [data, setData] = useState({genres:[],
-    production_companies: []});
+    production_companies: [],
+    poster_path: ''});
     const {id} = useParams();
     const points = {
         endPoint: "movie",
