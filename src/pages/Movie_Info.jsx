@@ -6,7 +6,7 @@ import {BsArrowLeft} from "react-icons/bs";
 const MovieInfo = () => {
     const [data, setData] = useState({genres:[],
     production_companies: [],
-    poster_path: ''});
+    poster_path: null});
     const {id} = useParams();
     const points = {
         endPoint: "movie",
