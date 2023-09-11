@@ -32,7 +32,7 @@ const Detail = (props) => {
         
         <section className="container-info">
                  <div className="container-info__poster">
-                     <img className={`container-info__img ${shadowImg}`} src={`https:image.tmdb.org/t/p/w500${poster_path ? poster_path : ''}`} alt={`${original_title}`} />
+                     <img className={`container-info__img ${shadowImg}`} src={`https://image.tmdb.org/t/p/w500${poster_path ? poster_path : ''}`} alt={`${original_title}`} />
                  </div>
                  <div className="container-info__meta">
                      <article className="container-info__overview">
