@@ -6,11 +6,11 @@ const Home = () => {
     const [currentMovies, setCurrentMovies] = useState([]);
     const namePoint = {
         movie : "movie",
-        category : "now_playing"
+        category : "top_rated"
     }
     return(
         <main>
-            <Title title={"En estreno"}/>
+            <Title title={"Mejores por Votación"}/>
             <ListMovies dataList={currentMovies} setDataList={setCurrentMovies} namePoint={namePoint}/>
         </main>
     )

@@ -3,7 +3,6 @@ import { endPoints } from "../api/api";
 import Posts from "./Posts";
 import PaginationNav from "./Pagination";
 const ListMovies = (props) => {
-    
     const {dataList, setDataList, namePoint} = props;
 
     const [page, setPage] = useState(1);
